@@ -13,12 +13,21 @@
 
 //document.getElementById("greeting").innerHTML =  greeting + ' ' + firstName;
 
-let friends = ['orlean','nelson','gabriel','natalia']
-console.log(friends)
+//let friends = ['orlean','nelson','gabriel','natalia']
+//console.log(friends)
 
-friends[1] = 'Anna'
-friends[4] = 'Maverick'
-friends[4] = 1
+//friends[1] = 'Anna'
+//friends[4] = 'Maverick'
+//friends[4] = 1
 
-console.log(friends)
-console.log(friends[1])
+//console.log(friends)
+//console.log(friends)
+
+let celsius = 0
+let fahrenheit = 0
+
+celsius = parseFloat(prompt('Digite a temperatura em Celcius: '))
+
+fahrenheit =  (celsius * 1.8) + 32
+
+alert('A temperatura em Fahrenheit é de '+ fahrenheit.toFixed(2))
