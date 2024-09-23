@@ -23,11 +23,30 @@
 //console.log(friends)
 //console.log(friends)
 
-let celsius = 0
-let fahrenheit = 0
+//let celsius = 0
+//let fahrenheit = 0
 
-celsius = parseFloat(prompt('Digite a temperatura em Celcius: '))
+//celsius = parseFloat(prompt('Digite a temperatura em Celcius: '))
 
-fahrenheit =  (celsius * 1.8) + 32
+//fahrenheit =  (celsius * 1.8) + 32
 
-alert('A temperatura em Fahrenheit é de '+ fahrenheit.toFixed(2))
+//alert('A temperatura em Fahrenheit é de '+ fahrenheit.toFixed(2))
+
+let grade = prompt('Digite a nota do aluno:')
+
+if (grade > 100){
+    alert('Nota invalida')
+}else if (grade >= 90){
+    alert('Aluno nota A')
+}
+else if (grade >= 80){
+    alert('Aluno nota B')
+}
+else if (grade >= 70){
+    alert('Aluno nota C')
+}
+else if (grade >= 60){
+    alert('Aluno nota D')
+}else{
+    alert('Nota F')
+}
