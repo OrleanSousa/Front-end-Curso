@@ -3,6 +3,6 @@ let gorjeta = parseFloat(prompt('Digite a porcentagem da gorjeta: '))
 
 
 gorjeta = (valorConta * gorjeta) / 100
-valorFinal = valorConta + gorjeta
+let valorFinal = valorConta + gorjeta
 
-alert('O valor total da conta com gorjeta é: ' +valorFinal)
+alert('O valor total da conta com gorjeta é: ' + valorFinal.toFixed(2))
