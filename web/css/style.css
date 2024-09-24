@@ -3,19 +3,9 @@ h1{
     font-family: 'Courier New', Courier, monospace;
 }
 
-img {
-    max-width: 70%;
-    height: auto;
+video {
+    max-width: 60%;
+    max-height: 60%;
     display: block;
     margin: 0 auto;
-}
-
-button{
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: block;
-    margin: 15px auto;
 }
