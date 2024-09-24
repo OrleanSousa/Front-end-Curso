@@ -9,11 +9,15 @@
     width: 200px;
     height: 200px;
     margin: 10px;
-    background-image: linear-gradient(to bottom left, black 30%, yellow);
+    background-color: lightskyblue;
+    border: 5px solid black;
+    border-bottom: 20px solid yellow;
 }
 .square_2 {
     width: 200px;
     height: 200px;
     margin: 10px;
-    background-image: radial-gradient(violet, blue);
+    background-color: lightskyblue;
+    border: 5px solid black;
+    border-top: 20px solid yellow;
 }
