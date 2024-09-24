@@ -1,12 +1,19 @@
-let num1Input = document.getElementById("num1");
-let num2Input = document.getElementById("num2");
+let numberInput = document.getElementById("numberInput");
+let checkButton = document.getElementById("checkButton");
 let outputDiv = document.getElementById("output");
 
-function showHigherNumber() {
-  let num1 = Number(num1Input.value);
-  let num2 = Number(num2Input.value);
+checkButton.addEventListener("click", function() {
+  let number = Number(numberInput.value);
 
-  let higherNumber = (num1 > num2) ? num1 : num2;
+  if (number >= 1 && number <= 10) {
+    outputDiv.innerHTML = "Valid number!";
+  } else if (number < 1) {
+    outputDiv.innerHTML = "Number is too small!";
+  } else if (number > 10) {
+    outputDiv.innerHTML = "Number is too large!";
+  } else {
+    outputDiv.innerHTML = "Something went wrong!";
+  }
 
-  outputDiv.innerHTML = 'The higher number is ' + higherNumber
-}
+  numberInput.value = ""
+});
