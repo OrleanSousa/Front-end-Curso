@@ -1,9 +1,15 @@
-let colorList = []
 
-for ( let i = 1; i <= 3; i++){
-    let userColor = prompt('digite a cor: ')
-    colorList.push(userColor)
-    
+let lista2 = ['maça', 'pera','uva','melancia','manga']
+
+let numberList = document.getElementById('listaNumeros')
+
+for( i = 0 ; i < lista2.length ; i++ ){
+   let listItem =  document.createElement('li')
+   listItem.appendChild(document.createTextNode(lista2[i]))
+//    listItem.textContent = 'Item ' + i
+   numberList.appendChild(listItem)
 }
 
-alert('A sua lista de cores ficou assim: ' + colorList)
+
+
+
