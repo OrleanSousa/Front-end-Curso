@@ -1,10 +1,20 @@
-let checkButton = document.getElementById('check-button')
-let ageInput = document.getElementById('age-input')
+let startInput = document.getElementById('start');
+let endInput = document.getElementById('end');
+let outputDiv = document.getElementById('output');
 
+function showEvenNumbers() {
+  let start = Number(startInput.value);
+  let end = Number(endInput.value);
 
-checkButton.addEventListener('click',function(){
-    let age = ageInput.value
-    let message = (age >= 18 ) ? 'Você é um adulto' : 'Você não é um adulto'
-    alert(message)
-    ageInput.value = ''
-})
+  let i = start;
+  let output = 0;
+
+  while(i <= end){
+    if(i % 2 == 0){
+        output = output + i + ' '
+        outputDiv.innerHTML = output
+    }
+    i++
+  }
+  
+}
