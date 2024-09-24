@@ -1,27 +1,27 @@
-const images = [
-    "img/img1.jpg",
-    'img/img2.jpg',
-    'img/img3.jpg',
-    'img/img4.jpg',
-    'img/img5.jpg',
-    'img/img6.png',
-    'img/img7.jpg',
-    'img/img8.jpg',
-    'img/img9.jpg',
-    'img/img10.jpg',
-    'img/img11.jpg',
-    'img/img12.jpg'
-]
+const counter = document.getElementById('counter');
+const incrementButton = document.getElementById('increment');
+const decrementButton = document.getElementById('decrement');
+const resetButton = document.getElementById('reset');
 
-let currentIndex = 0
+let count = 0;
 
-let imageElement = document.getElementById('image')
-let buttonElement = document.getElementById('button')
+function updateCounter() {
+  counter.textContent = count;
+}
 
-buttonElement.addEventListener('click', function(){
-    currentIndex++
-    if(currentIndex >= images.length){
-        currentIndex = 0
-    }
-    imageElement.src = images[currentIndex]
-})
+incrementButton.addEventListener('click', function() {
+  count++;
+  updateCounter();
+});
+
+decrementButton.addEventListener('click', function() {
+  if (count > 0) {
+    count--;
+    updateCounter();
+  }
+});
+
+resetButton.addEventListener('click', function() {
+  count = 0;
+  updateCounter();
+});
