@@ -1,27 +1,43 @@
-const counter = document.getElementById('counter');
-const incrementButton = document.getElementById('increment');
-const decrementButton = document.getElementById('decrement');
+const display = document.getElementById('display');
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
 const resetButton = document.getElementById('reset');
 
-let count = 0;
+let intervalId;
+let elapsedTime = 0;
 
-function updateCounter() {
-  counter.textContent = count;
+function formatTime(time) {
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time - hours * 3600) / 60);
+  let seconds = time % 60;
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-incrementButton.addEventListener('click', function() {
-  count++;
-  updateCounter();
-});
+function updateTime() {
+  elapsedTime++;
+  display.textContent = formatTime(elapsedTime);
+}
 
-decrementButton.addEventListener('click', function() {
-  if (count > 0) {
-    count--;
-    updateCounter();
-  }
-});
+function start() {
+  intervalId = setInterval(updateTime, 1000);
+  startButton.disabled = true;
+  stopButton.disabled = false;
+}
 
-resetButton.addEventListener('click', function() {
-  count = 0;
-  updateCounter();
-});
+function stop() {
+  clearInterval(intervalId);
+  startButton.disabled = false;
+  stopButton.disabled = true;
+}
+
+function reset() {
+  clearInterval(intervalId);
+  elapsedTime = 0;
+  display.textContent = formatTime(elapsedTime);
+  startButton.disabled = false;
+  stopButton.disabled = true;
+}
+
+startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
+resetButton.addEventListener('click', reset);
