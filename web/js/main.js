@@ -1,19 +1,15 @@
-const facebookButton = document.getElementById('facebook-button');
-const instagramButton = document.getElementById('instagram-button');
+const search = document.querySelector('#search');
+const list = document.querySelector('#list');
 
-function shareOnFacebook () {
-  const url = encodeURIComponent(window.location.href);
-  const shareUrl = `https://www.facebook.com/shares/shares.php?u=${url}`;
-  window.open(shareUrl, '_blank');
-}
-
-function shareOnInstagram () {
-  const text = encodeURIComponent('check out this website:');
-  const url = encodeURIComponent(window.location.href);
-  const shareUrl = `https://www.instagram.com/?url=${url}&caption=${text}`;
-  window.open(shareUrl, '_blank');
-
-}
-
-facebookButton.addEventListener('click', shareOnFacebook);
-instagramButton.addEventListener('click', shareOnInstagram);
+search.addEventListener('input',() => {
+  const value = search.value.toLowerCase();
+  const items = list.getElementsByTagName('li');
+  Array.from(items).forEach((item)=>{
+    const text = item.textContent.toLowerCase();
+    if(text.indexOf(value) !== -1){
+      item.style.display = 'block';
+    }else{
+      item.style.display = 'none';
+    }
+  });
+});
